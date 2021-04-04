@@ -1,5 +1,5 @@
 import "../../global.css";
-import "./home.css";
+import "./Home.css";
 import { Box, Typography, TextField, Button } from "@material-ui/core";
 import mockup from "../../resources/images/mockup-payment.png";
 import headerLogo from "../../resources/images/logo-light.svg";
@@ -112,6 +112,11 @@ function Home() {
       />
     </Fade>
   ));
+  const buttonLabel = (		
+    <span className="waitlist-button-text">		
+      Join<span className="waitlist-button-web-text"> Waitlist</span>		
+    </span>		
+  );
   return (
     <Box className="payment-home rows">	
       <Box className="payment-home-header">	
@@ -119,10 +124,14 @@ function Home() {
       </Box>
       <Box className="payment-home-landing-container columns">	
         <Box className="payment-home-text rows">
-          <Typography variant="h2" color="primary">
+        <Typography
+            variant="h2"		
+            className="payment-home-text-title"		
+            color="primary"		
+          >
             The simplest intro to crypto
           </Typography>
-          <EmailInput buttonLabel="Join Waitlist"  invalid={invalid} onKeyPress={(e, val) => keyDown(e, val)} submitEmail={submitEmail} emailValue={email} setEmail={setEmail} invalidClick={invalidClick}/>
+          <EmailInput buttonLabel={buttonLabel}  invalid={invalid} onKeyPress={(e, val) => keyDown(e, val)} submitEmail={submitEmail} emailValue={email} setEmail={setEmail} invalidClick={invalidClick}/>
           <Typography variant="h5" color="primary">
             {message}
           </Typography>
@@ -150,7 +159,7 @@ function Home() {
         </Box>
       </Box>
       <Box className="payment-home-footer">
-        <EmailInput buttonLabel="Join Waitlist" invalid={invalid} onKeyPress={(e, val) => keyDown(e, val)} submitEmail={submitEmail} emailValue={email2} setEmail={setEmail2}/>
+        <EmailInput buttonLabel={buttonLabel} invalid={invalid} onKeyPress={(e, val) => keyDown(e, val)} submitEmail={submitEmail} emailValue={email2} setEmail={setEmail2}/>
       </Box>
     </Box>
   );

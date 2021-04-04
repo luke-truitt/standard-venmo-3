@@ -1,7 +1,7 @@
 import "../../global.css";
-import "./home.css";
+import "./Home.css";
 import { Box, Typography, TextField, Button } from "@material-ui/core";
-import mockup from "../../resources/images/mockup-lottery.png";
+import mockup from "../../resources/images/mockup-payment.png";
 import headerLogo from "../../resources/images/logo-light.svg";
 import EmailInput from "../EmailInput";
 import GradientTextBox from "../GradientTextBox";
@@ -105,7 +105,7 @@ function Home() {
   const ExplainerTextBoxes = explainerText.map((step) => (
     <Fade top>
       <GradientTextBox
-        color="pink"
+        color="purple"
         number={step.number}
         title={step.title}
         body={step.body}
@@ -113,12 +113,12 @@ function Home() {
     </Fade>
   ));
   return (
-    <Box className="lottery-home rows">
-      <Box className="lottery-home-header">
-        <img className="lottery-home-header-logo" src={headerLogo} />
+    <Box className="payment-home rows">	
+      <Box className="payment-home-header">	
+        <img className="payment-home-header-logo" src={headerLogo} />
       </Box>
-      <Box className="lottery-home-landing-container columns">
-        <Box className="lottery-home-text rows">
+      <Box className="payment-home-landing-container columns">	
+        <Box className="payment-home-text rows">
           <Typography variant="h2" color="primary">
             The simplest intro to crypto
           </Typography>
@@ -131,7 +131,7 @@ function Home() {
           </Typography>
         </Box>{" "}
         <Fade top>
-          <img src={mockup} className="lottery-home-mockup" />{" "}
+          <img src={mockup} className="payment-home-mockup" />{" "}
         </Fade>
       </Box>
       <Box className="explainer-container">
@@ -149,7 +149,7 @@ function Home() {
           </Box>
         </Box>
       </Box>
-      <Box className="lottery-home-footer">
+      <Box className="payment-home-footer">
         <EmailInput buttonLabel="Join Waitlist" invalid={invalid} onKeyPress={(e, val) => keyDown(e, val)} submitEmail={submitEmail} emailValue={email2} setEmail={setEmail2}/>
       </Box>
     </Box>

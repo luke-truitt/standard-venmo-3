@@ -31,21 +31,21 @@ function Home() {
   const explainerText = [
     {
       number: 1,
-      title: "A title is what happens",
+      title: "Deposit money",
       body:
-        "nd then heres an explanation of what really happens. Everything goes wow.",
+        "Deposit your money and we’ll convert it into a stable digital coin which generates interest.",
     },
     {
       number: 2,
-      title: "A title is what happens",
+      title: "Earn more",
       body:
-        "nd then heres an explanation of what really happens. Everything goes wow.",
+        "Earn more interest as you transact via Boosts. Receive up to 50x the national savings average!",
     },
     {
       number: 3,
-      title: "A title is what happens",
+      title: "Pay friends",
       body:
-        "nd then heres an explanation of what really happens. Everything goes wow.",
+        "Immediately and cheaply send your digital money around while earning you an awesome interest rate. ",
     },
   ];
   const keyDown = (e, val) => {
@@ -125,18 +125,18 @@ function Home() {
       <Box className="payment-home-landing-container columns">	
         <Box className="payment-home-text rows">
         <Typography
-            variant="h2"		
+            variant="h4"		
             className="payment-home-text-title"		
             color="primary"		
           >
-            The simplest intro to crypto
+            Venmo, meet crypto. Earn interest on the money sitting in your payments account.
           </Typography>
           <EmailInput buttonLabel={buttonLabel}  invalid={invalid} onKeyPress={(e, val) => keyDown(e, val)} submitEmail={submitEmail} emailValue={email} setEmail={setEmail} invalidClick={invalidClick}/>
-          <Typography variant="h5" color="primary">
+          <Typography variant="body" color="primary">
             {message}
           </Typography>
-          <Typography variant="h5" color="primary">
-            Store crypto and earn interest. No fees.
+          <Typography variant="h6" color="primary">
+            Traditional payment services lose money every time you send money, so they can’t offer other perks. With crypto, it’s free, so you can earn rewards on the money sitting in your account. Integrates with Venmo, PayPal and other payment providers.
           </Typography>
         </Box>{" "}
         <Fade top>

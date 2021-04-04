@@ -125,14 +125,14 @@ function Home() {
       <Box className="payment-home-landing-container columns">	
         <Box className="payment-home-text rows">
         <Typography
-            variant="h4"		
+            variant="h4"
             className="payment-home-text-title"		
             color="primary"		
           >
             Venmo, meet crypto. Earn interest on the money sitting in your payments account.
           </Typography>
           <EmailInput buttonLabel={buttonLabel}  invalid={invalid} onKeyPress={(e, val) => keyDown(e, val)} submitEmail={submitEmail} emailValue={email} setEmail={setEmail} invalidClick={invalidClick}/>
-          <Typography variant="body" color="primary">
+          <Typography variant="body" color="primary" style={{marginBottom: "40px"}}>
             {message}
           </Typography>
           <Typography variant="h6" color="primary">

@@ -31,7 +31,6 @@ div .app {
 img.payment-home-mockup {
   align-self: flex-start;
   max-height: 90vh;
-
 }
 
 .explainer-container {
@@ -132,12 +131,5 @@ img.payment-home-mockup {
   }
   .waitlist-button-web-text {
     display: none !important;
-  }
-  input {
-    height: 2vh !important;
-  }
-  
-  label {
-    margin-top: -0.1rem !important;
   }
 }

@@ -1,5 +1,5 @@
 import "../../global.css";
-import "./Home.css";
+import "./home.css";
 import {
   Snackbar,
   Box,
@@ -154,9 +154,6 @@ function Home() {
     setSuccessMessage(false);
     setErrorMessage(true);
   };
-  const useEffect = () => {
-    ReactGA.pageview('/');
-  }
   return (
     <Box className="lottery-home rows">
       <Snackbar

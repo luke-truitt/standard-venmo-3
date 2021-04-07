@@ -1,5 +1,5 @@
 import "../../global.css";
-import "./home.css";
+import "./Home.css";
 import {
   Snackbar,
   Box,
@@ -7,13 +7,14 @@ import {
   TextField,
   Button,
 } from "@material-ui/core";
-import mockup from "../../resources/images/mockup-payment.png";
-import headerLogo from "../../resources/images/logo-light.svg";
+import mockup from "../../resources/images/mockup-wallet.png";
+import headerLogo from "../../resources/images/logo-purple.svg";
 import EmailInput from "../EmailInput";
 import GradientTextBox from "../GradientTextBox";
 import Fade from "react-reveal/Fade";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import * as emailjs from "emailjs-com";
+import ReactGA from "react-ga";
 import MuiAlert from "@material-ui/lab/Alert";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -38,6 +39,7 @@ function Home() {
   const [email, setEmail] = useState("");
   const [email2, setEmail2] = useState("");
   const [errorMessage, setErrorMessage] = useState(false);
+
   const [loading, setLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState(false);
 
@@ -46,19 +48,19 @@ function Home() {
       number: 1,
       title: "Deposit money",
       body:
-        "Deposit your money and we’ll convert it into a stable digital coin which generates interest.",
+        "We transfer it to the safest digital currency so you don’t need to worry about fees or volatility",
     },
     {
       number: 2,
-      title: "Earn more",
+      title: "Earn interest",
       body:
-        "Earn more interest as you transact via Boosts. Receive up to 50x the national savings average!",
+        "Your deposited money will earn you 4% interest while you leave it in your account",
     },
     {
       number: 3,
-      title: "Pay friends",
+      title: "Dive in",
       body:
-        "Immediately and cheaply send your digital money around while earning you an awesome interest rate. ",
+        "We have provided easy ways for you to learn and trade crypto while earning money",
     },
   ];
   const keyDown = (e, val) => {
@@ -77,6 +79,9 @@ function Home() {
         showError();
       }
     }
+  };
+  const useEffect = () => {
+    ReactGA.pageview("/");
   };
   const addEmail = async (email) => {
     axios
@@ -112,13 +117,17 @@ function Home() {
       setEmail2("");
       setErrorMessage(false);
     }
+    ReactGA.event({
+      category: "User",
+      action: "Signed Up For Waitlist",
+    });
     setErrorMessage(false);
     setSuccessMessage(true);
   };
   const ExplainerTextBoxes = explainerText.map((step) => (
     <Fade top>
       <GradientTextBox
-        color="purple"
+        color="pink"
         number={step.number}
         title={step.title}
         body={step.body}
@@ -142,7 +151,7 @@ function Home() {
     setErrorMessage(true);
   };
   return (
-    <Box className="payment-home rows">
+    <Box className="lottery-home rows">
       <Snackbar
         open={successMessage}
         autoHideDuration={3000}
@@ -169,19 +178,18 @@ function Home() {
           Please enter a valid email.
         </Alert>
       </Snackbar>
-      <Box className="payment-home-header">
-        <img className="payment-home-header-logo" src={headerLogo} />
+      <Box className="lottery-home-header">
+        <img className="lottery-home-header-logo" src={headerLogo} />
       </Box>
-      <Box className="payment-home-landing-container columns">
-        <Box className="payment-home-text rows">
+      <Box className="lottery-home-landing-container columns">
+        <Box className="lottery-home-text rows">
           <Typography
-            variant="h4"
-            className="payment-home-text-title"
+            variant="h3"
+            className="lottery-home-text-title"
             color="primary"
           >
-            Venmo, meet crypto. Earn interest on the money sitting in your
-            payments account.
-          </Typography>{" "}
+            Get started in crypto in 5 minutes
+          </Typography>
           <EmailInput
             buttonLabel={buttonLabel}
             onKeyPress={(e, val) => keyDown(e, val)}
@@ -190,34 +198,36 @@ function Home() {
             setEmail={setEmail}
             invalidEmail={showError}
           />
-          <Typography variant="h6" color="primary">
-            Traditional payment services lose money every time you send money,
-            so they can’t offer other perks. With crypto, it’s free, so you can
-            earn rewards on the money sitting in your account. Integrates with
-            Venmo, PayPal and other payment providers.
+          <Typography
+            className="lottery-home-subtitle"
+            variant="body"
+            color="primary"
+          >
+            Walkthroughs to get started and go deeper, all integrated with your
+            bank and Apple Pay
           </Typography>
         </Box>{" "}
         <Fade top>
-          <img src={mockup} className="payment-home-mockup" />{" "}
+          <img src={mockup} className="lottery-home-mockup" />{" "}
         </Fade>
       </Box>
       <Box className="explainer-container">
         <Box className="explainer-container-content rows">
-          <Fade top>
+          {/* <Fade top>
             <Typography
               className="explainer-title"
-              variant="h3"
+              variant="h6"
               color="primary"
             >
               How does it work?
             </Typography>
-          </Fade>
+          </Fade> */}
           <Box className="explainer-text-boxes columns">
             {ExplainerTextBoxes}
           </Box>
         </Box>
       </Box>
-      <Box className="payment-home-footer">
+      <Box className="lottery-home-footer">
         <EmailInput
           buttonLabel={buttonLabel}
           onKeyPress={(e, val) => keyDown(e, val)}
@@ -225,7 +235,7 @@ function Home() {
           emailValue={email2}
           setEmail={setEmail2}
           invalidEmail={showError}
-        />{" "}
+        />
       </Box>
     </Box>
   );

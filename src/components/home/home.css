@@ -1,67 +1,69 @@
 div .app {
-  background-image: linear-gradient(#6600e8, #000000);
+  background-image: linear-gradient(#f4f3ee, #f3eef4) !important;
 }
 
-.payment-home {
+.lottery-home {
   padding-top: 5vh;
 }
-.payment-home-header {
+.lottery-home-header {
   height: 10vh;
 }
 
-.payment-home-header-logo {
+.lottery-home-header-logo {
   padding-bottom: 5vw;
   padding-right: 5vw;
   padding-left: 5vw;
 }
-.payment-home-landing-container {
+.lottery-home-landing-container {
   justify-content: flex-start;
-  height: 90vh;
+  height: 80vh;
   padding-left: 5vw;
-  /* background-color: yellow; */
 }
-
-.payment-home-text {
+.lottery-home-subtitle {
+  font-size: 1.5rem;
+}
+.lottery-home-text {
   align-self: flex-start;
   padding-top: 20vh;
   padding-right: 10vw;
   width: 40vw;
 }
 
-img.payment-home-mockup {
+img.lottery-home-mockup {
   align-self: flex-start;
+  max-width: 50%;
+  height: auto;
   max-height: 90vh;
 }
 
 .explainer-container {
-  background-image: url("/src/resources/images/explainer-bg-purple-web.svg");
+  background-image: url("/src/resources/images/explainer-bg-light-web.svg");
   background-size: 100% auto;
   background-repeat: no-repeat;
-  background-position: center;
-  width: 100vw;
+  background-position: -3rem top;
+  width: 100vw !important;
+  margin: auto;
   height: 90vh;
 }
 .explainer-container-content {
-  justify-content: space-between;
-  width: 80vw;
+  width: 100vw;
   margin: auto;
-  height: 40vh;
-  padding-top: 10vh;
+  padding-top: 30vh;
 }
 
 .explainer-title {
   padding-right: 5vw;
 }
 .explainer-text-boxes {
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 20px;
 }
-.payment-home-footer {
+.lottery-home-footer {
   width: 50vw;
   margin: auto;
 }
 
-.payment-home-footer .email-input-container {
+.lottery-home-footer .email-input-container {
   padding-top: 0 !important;
 }
 
@@ -74,32 +76,37 @@ img.payment-home-mockup {
     height: auto !important;
     width: 90vw !important;
   }
-  .payment-home-text {
+  .lottery-home-text-title {
+    font-size: 2rem !important;
+  }
+  .lottery-home-subtitle {
+    font-size: 1.2rem !important;
+  }
+  .lottery-home-text {
     width: 90vw !important;
     padding-right: 0 !important;
     padding-bottom: 5vh;
   }
-  .payment-home-landing-container {
+  .lottery-home-landing-container {
     flex-direction: column !important;
   }
 
-  .payment-home-mockup {
-    width: 115vw !important;
-    height: auto !important;
+  .lottery-home-mockup {
+    width: 100vw !important;
+    margin-right: -10vw !important;
     max-height: none !important;
-    margin-right: -5vw !important;
-    margin-left: -10vw !important;
+    max-width: none !important;
   }
-  .payment-home-landing-container {
+  .lottery-home-landing-container {
     height: auto !important;
   }
   .explainer-container {
     height: auto !important;
     background-size: 100% auto !important;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
     margin-bottom: -25vh;
-    background-image: url("/src/resources/images/explainer-bg-purple-mobile.svg") !important;
+    background-image: url("/src/resources/images/explainer-bg-light-mobile.svg") !important;
   }
   .explainer-text-boxes {
     flex-direction: column !important;
@@ -112,20 +119,20 @@ img.payment-home-mockup {
     font-size: 2rem !important;
     text-align: center;
   }
-  .payment-home-footer {
+  .lottery-home-footer {
     padding-top: 5vw;
     width: 90vw !important;
   }
-  h2.payment-home-text-title {
+  h2.lottery-home-text-title {
     font-size: 3rem !important;
   }
-  .payment-home-text {
+  .lottery-home-text {
     padding-top: 10vh !important;
   }
-  .payment-home-header {
+  .lottery-home-header {
     height: 5vh !important;
   }
-  img.payment-home-header-logo {
+  img.lottery-home-header-logo {
     height: 60% !important;
     opacity: 50%;
   }

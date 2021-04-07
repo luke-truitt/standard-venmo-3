@@ -121,6 +121,10 @@ function Home() {
       category: "User",
       action: "Signed Up For Waitlist",
     });
+    ReactGA.event({
+      category: 'User',
+      action: 'Signed Up For Waitlist'
+    });
     setErrorMessage(false);
     setSuccessMessage(true);
   };
@@ -150,6 +154,9 @@ function Home() {
     setSuccessMessage(false);
     setErrorMessage(true);
   };
+  const useEffect = () => {
+    ReactGA.pageview('/');
+  }
   return (
     <Box className="lottery-home rows">
       <Snackbar

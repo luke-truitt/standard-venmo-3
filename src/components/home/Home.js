@@ -1,5 +1,5 @@
 import "../../global.css";
-import "./Home.css";
+import "./home.css";
 import {
   Snackbar,
   Box,
@@ -7,7 +7,7 @@ import {
   TextField,
   Button,
 } from "@material-ui/core";
-import mockup from "../../resources/images/mockup-wallet.png";
+import mockup from "../../resources/images/mockup-payment.png";
 import headerLogo from "../../resources/images/logo-purple.svg";
 import EmailInput from "../EmailInput";
 import GradientTextBox from "../GradientTextBox";
@@ -48,19 +48,19 @@ function Home() {
       number: 1,
       title: "Deposit money",
       body:
-        "We transfer it to the safest digital currency so you don’t need to worry about fees or volatility",
+        "Deposite your money and we'll convert it into a stable digtal coin which generates interest",
     },
     {
       number: 2,
-      title: "Earn interest",
+      title: "Earn more",
       body:
-        "Your deposited money will earn you 4% interest while you leave it in your account",
+        "Earn more interest as you transact via Boosts. Receive up to 50x the national savings average!",
     },
     {
       number: 3,
-      title: "Dive in",
+      title: "Pay friends",
       body:
-        "We have provided easy ways for you to learn and trade crypto while earning money",
+        "Immediately and cheaply send your digital money around while earning you an awesome interest rate",
     },
   ];
   const keyDown = (e, val) => {
@@ -188,7 +188,7 @@ function Home() {
             className="lottery-home-text-title"
             color="primary"
           >
-            Get started in crypto in 5 minutes
+            Earn interest in the same place you send money
           </Typography>
           <EmailInput
             buttonLabel={buttonLabel}
@@ -203,8 +203,8 @@ function Home() {
             variant="body"
             color="primary"
           >
-            Walkthroughs to get started and go deeper, all integrated with your
-            bank and Apple Pay
+            With digital finance you can earn interest on money for even just a
+            few hours
           </Typography>
         </Box>{" "}
         <Fade top>
